@@ -1,13 +1,13 @@
-# LJadmin module
+# LJAdmin module
 
-*Start new admin back-ends for an application using basic configurations*
+*Start new admin backends for an application using basic configurations*
 
 - **Version:** 0.1.0
 - **URL:** <https://github.com/Luwe/Kohana-Admin>
 
 ## Description
 
-This Kohana module is designed to act as a scaffold for admin backends almost every application needs. It uses the standard Auth module to distinguish admins from guests. Extending Controller_Admin will secure your admin pages from unwanted visitors.
+This Kohana module is designed to act as a scaffold for admin backends. It uses the standard Auth module to distinguish admins from guests. Extending Controller_Admin will secure your admin pages from unwanted visitors.
 
 By default, the File driver is used for simple authentication. Adding users can be done by editing config/auth.php (see Auth module).
 
