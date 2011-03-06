@@ -1,0 +1,10 @@
+<form method="post">
+  {{#error}}<div class="error">{{error}}</div>{{/error}}
+  <dl>
+    <dt>Username</dt>
+    <dd><input type="text" maxlength="20" name="username" value="{{username}}" /></dd>
+    <dt>Password</dt>
+    <dd><input type="password" maxlength="30" name="password" /></dd>
+  </dl>
+  <div><input type="submit" value="Login as admin" /></div>
+</form>

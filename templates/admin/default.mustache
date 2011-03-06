@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />                                               
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="shortcut icon" type="image/png" href="{{favicon}}" />
+   
+    {{#stylesheets}}
+      {{%IMPLICIT-ITERATOR}}{{#.}}<link rel="stylesheet" type="text/css" href="{{file}}" media="{{media}}" />{{/.}}
+    {{/stylesheets}}
+  </head>
+  <body>
+    <div class="container">{{> content}}</div>
+    
+    {{%IMPLICIT-ITERATOR}}
+    {{#scripts}}
+      <script src="{{& .}}"></script> 
+    {{/scripts}}    
+  </body>
+</html>
