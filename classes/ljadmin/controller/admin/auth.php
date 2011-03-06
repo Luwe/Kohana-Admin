@@ -23,6 +23,12 @@ class Ljadmin_Controller_Admin_Auth extends Ljadmin_Controller_Admin {
    */
   public function action_login()
   {
+    // Redirect user if already logged-in
+    if (Auth::instance()->logged_in('admin'))
+    {
+      $this->_redirect('admin', 'home', 'index');
+    }
+
     // User tries to login
     if ($_POST)
     {
