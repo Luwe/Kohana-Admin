@@ -3,7 +3,7 @@
 *Start new admin back-ends for an application using basic configurations*
 
 - **Version:** 0.1.0
-- **URL:** <http://github.com/none>
+- **URL:** <https://github.com/Luwe/Kohana-Admin>
 
 ## Description
 
