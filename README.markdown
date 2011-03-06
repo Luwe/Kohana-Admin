@@ -16,14 +16,14 @@ This module doesn't provide a full admin layout. For a nice admin theme check he
 ## Used Kohana modules
 
 - ### kohana/core
-  - **url** : `https://github.com/kohana/core.git`
+  - **url** : <https://github.com/kohana/core>
   - **version** : `3.1.x`
   
 - ### modules/auth
-	- **url** : `https://github.com/kohana/auth`
+	- **url** : <https://github.com/kohana/auth>
   - **version** : `3.1.x`
 - ### modules/ljbase
-	- **url** : `https://github.com/Luwe/Kohana-Base`
+	- **url** : <https://github.com/Luwe/Kohana-Base>
   - **version** : `0.2.0`
 
 ## Disclaimer
