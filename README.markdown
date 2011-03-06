@@ -22,6 +22,9 @@ This module doesn't provide a full admin layout. For a nice admin theme check he
 - ### modules/auth
 	- **url** : <https://github.com/kohana/auth>
   - **version** : `3.1.x`
+- ### modules/kostache
+	- **url** : <https://github.com/zombor/KOstache>
+  - **version** : `3.1.x`
 - ### modules/ljbase
 	- **url** : <https://github.com/Luwe/Kohana-Base>
   - **version** : `0.2.0`
