@@ -5,5 +5,6 @@ return array(
     'invaliduser' => 'Invalid user/password combination',
     'default'     => 'Username should not be empty',
    ),
-   'password' => array('default' => 'Password should not be empty')
+   'password' => array('default' => 'Password should not be empty'),
+   'token'    => array('default' => 'Invalid token'),
 );
