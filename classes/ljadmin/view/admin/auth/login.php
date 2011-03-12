@@ -9,16 +9,39 @@
 abstract class Ljadmin_View_Admin_Auth_Login extends Ljadmin_View_Admin_Default {
 
   /**
-   * Error to be shown when login fails
+   * Anti-CSRF token (http://en.wikipedia.org/wiki/Cross-site_request_forgery)
    * @var  string
    */
-  public $error;
+  public $token;
 
   /**
-   * Entered username after login fails
-   * @var  string
+   * Errors to be shown when login fails
+   * @var  array
    */
-  protected $_username;
+  protected $_errors = array();
+
+  /**
+   * Entered post variables after login fails
+   * @var  array
+   */
+  protected $_post = array();
+
+  /**
+   * Parse errors for use in mustache
+   *
+   * @return  string
+   */
+  public function errors()
+  {
+    $errors = array();
+  
+    foreach ($this->_errors as $label => $error)
+    {
+      $errors[] = array('label' => $label, 'error' => $error);
+    }
+
+    return $errors;
+  }
 
   /**
    * Escape and return username
@@ -26,8 +49,11 @@ abstract class Ljadmin_View_Admin_Auth_Login extends Ljadmin_View_Admin_Default 
    * @return  string
    */
   public function username()
-  {
-    return HTML::chars($this->_username);
+  {            
+    if (empty($this->_post['username']))
+      return '';
+    
+    return HTML::chars($this->_post['username']);
   }
 
 }

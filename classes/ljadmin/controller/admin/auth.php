@@ -14,7 +14,7 @@ class Ljadmin_Controller_Admin_Auth extends Ljadmin_Controller_Admin {
    * @var  boolean
    */
   public $auth_needed = FALSE;
-  
+
   /**
    * Admin login action. Shows loginform and handles auth when $_POST
    * data is available.
@@ -29,20 +29,43 @@ class Ljadmin_Controller_Admin_Auth extends Ljadmin_Controller_Admin {
       $this->_redirect('admin', 'home', 'index');
     }
 
-    // User tries to login
+    // Get or generate security token
+    $token = Security::token();
+    $this->view->set('token', $token);
+
     if ($_POST)
     {
-      // Authenticate username/password combination
-      if (Auth::instance()->login($_POST['username'], $_POST['password']))
+      // Use validation class to validate input
+      $post_validate = Validation::factory($_POST)
+        ->rule('username', 'not_empty')
+        ->rule('password', 'not_empty')
+        ->rule('token', 'not_empty')
+        ->rule('token', 'Security::check');
+
+      $post = $post_validate->as_array();
+
+      // User tries to login so authenticate input
+      if ($post_validate->check())
       {
-        // Redirect to admin home
-        $this->_redirect('admin', 'home', 'index');
+        if (Auth::instance()->login($post['username'], $post['password']))
+        {
+          // Redirect to admin home
+          $this->_redirect('admin', 'home', 'index');
+        }
+        else
+        {
+          // Set authentication error
+          $post_validate->error('username', 'invaliduser');
+        }
       }
 
-      // Set errormessage and username
+      // Get validation errors
+      $errors = $post_validate->errors('auth');
+
+      // Add post variables to form if something went wrong
       $this->view
-        ->set('error', Kohana::message('auth', 'err_login'))
-        ->set('_username', $_POST['username']);
+        ->set('_post', $post)
+        ->set('_errors', $errors);
     }
   }
 
