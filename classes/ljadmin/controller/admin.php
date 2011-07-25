@@ -6,12 +6,12 @@
  * extended by all your admin controllers. 
  *
  * @uses       Modules/Auth
- * @uses       Modules/LJBase 
+ * @uses       Modules/LJCore 
  * @package    LJAdmin
  * @author     Lieuwe Jan Eilander
  * @copyright  (c) 2010-2011 Lieuwe Jan Eilander
  */
-abstract class Ljadmin_Controller_Admin extends Ljbase_Controller_Default {
+abstract class Ljadmin_Controller_Admin extends Ljcore_Controller_Default {
 
   /**
    * Authentication needed to watch page
@@ -26,15 +26,15 @@ abstract class Ljadmin_Controller_Admin extends Ljbase_Controller_Default {
    */
   public function before()
   {
-    // Execute parent method
-    parent::before();  
-
     // If auth is needed: check if an admin is logged in
     if (($this->auth_needed === TRUE) AND ( ! Auth::instance()->logged_in('admin')))
     {
       // Redirect to login page
-      $this->_redirect('admin', 'auth', 'login');
+      $this->_redirect('widget', 'auth', 'login', array('directory' => 'admin'));
     }
+
+    // Execute parent method
+    parent::before();  
   }
 
 }

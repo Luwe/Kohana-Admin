@@ -29,9 +29,9 @@ Until today (10th of march, 2011) Auth doesn't support roles when checking for s
 - ### modules/kostache
 	- **url** : <https://github.com/zombor/KOstache>
   - **version** : `3.1.x`
-- ### modules/ljbase
-	- **url** : <https://github.com/Luwe/Kohana-Base>
-  - **version** : `0.2.0`
+- ### modules/ljcore
+	- **url** : <https://github.com/Luwe/Kohana-Base-Alternative>
+  - **version** : `0.3.0`
 
 ## Disclaimer
 

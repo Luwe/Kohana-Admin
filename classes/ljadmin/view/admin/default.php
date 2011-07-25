@@ -6,7 +6,7 @@
  * @author     Lieuwe Jan Eilander
  * @copyright  (c) 2010-2011 Lieuwe Jan Eilander
  */
-abstract class Ljadmin_View_Admin_Default extends Ljbase_View_Default {
+abstract class Ljadmin_View_Admin_Default extends Ljcore_View_Default {
 
   /**
    * Holds the website layout template
