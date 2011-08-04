@@ -6,7 +6,7 @@
  * @author     Lieuwe Jan Eilander
  * @copyright  (c) 2010-2011 Lieuwe Jan Eilander
  */
-abstract class Ljadmin_View_Admin_Auth_Login extends Ljadmin_View_Admin_Default {
+abstract class Ljadmin_View_Admin_Auth_Login extends View_Admin_Default {
 
   /**
    * Anti-CSRF token (http://en.wikipedia.org/wiki/Cross-site_request_forgery)
