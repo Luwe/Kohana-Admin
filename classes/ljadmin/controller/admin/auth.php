@@ -33,10 +33,10 @@ class Ljadmin_Controller_Admin_Auth extends Ljadmin_Controller_Admin {
     $token = Security::token();
     $this->view->set('token', $token);
 
-    if ($_POST)
+    if ($this->request->post())
     {
       // Use validation class to validate input
-      $post_validate = Validation::factory($_POST)
+      $post_validate = Validation::factory($this->request->post())
         ->rule('username', 'not_empty')
         ->rule('password', 'not_empty')
         ->rule('token', 'not_empty')
