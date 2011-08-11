@@ -7,7 +7,7 @@
  * @author     Lieuwe Jan Eilander
  * @copyright  (c) 2010-2011 Lieuwe Jan Eilander
  */
-class Ljadmin_Controller_Admin_Auth extends Ljadmin_Controller_Admin {
+class Ljadmin_Controller_Admin_Auth extends Controller_Admin {
 
   /**
    * Authentication not needed to view this controller
