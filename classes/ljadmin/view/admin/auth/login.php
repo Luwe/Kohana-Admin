@@ -40,6 +40,14 @@ abstract class Ljadmin_View_Admin_Auth_Login extends View_Admin_Default {
       $errors[] = array('label' => $label, 'error' => $error);
     }
 
+    // Set first item to TRUE
+    $errors[0]['first'] = TRUE;
+
+    // Set last item to TRUE
+    end($errors);
+    $last_item = key($errors);
+    $errors[$last_item]['last'] = TRUE;
+
     return $errors;
   }
 

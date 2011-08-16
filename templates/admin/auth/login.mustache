@@ -1,8 +1,10 @@
 <form method="post">
   <input type="hidden" name="token" value="{{token}}" />
-  {{#errors}}<ul class="error">{{/errors}}
-  {{#errors}}<li>{{error}}</li>{{/errors}}
-  {{#errors}}</ul>{{/errors}}
+  {{#errors}}
+  {{#first}}<ul class="error">{{/first}}
+    <li>{{error}}</li>
+  {{#last}}</ul>{{/last}}
+  {{/errors}}
   <dl>
     <dt>Username</dt>
     <dd><input type="text" maxlength="20" name="username" value="{{username}}" /></dd>
