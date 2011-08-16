@@ -33,6 +33,9 @@ abstract class Ljadmin_View_Admin_Auth_Login extends View_Admin_Default {
    */
   public function errors()
   {
+    if (empty($this->_errors))
+      return;
+
     $errors = array();
   
     foreach ($this->_errors as $label => $error)
